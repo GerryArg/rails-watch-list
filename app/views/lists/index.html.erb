@@ -1,0 +1,12 @@
+<!-- app/views/lists/index.html.erb -->
+<div class="container">
+  <h1>My Movie Lists</h1>
+  <ul class="list-group">
+    <% @lists.each do |list| %>
+      <li class="list-group-item">
+        <%= link_to list.name, list_path(list) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'Create a new list', new_list_path, class: "btn btn-primary mt-3" %>
+</div>
